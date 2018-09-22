@@ -1,4 +1,4 @@
-# content-finder
+# file-watcher-dog
 Watch recursively files by regex in directory and post modifications as event to Datadog
 
 ## Installation
