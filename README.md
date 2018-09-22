@@ -7,9 +7,9 @@ Watch recursively files by regex in directory and post modifications as event to
 ## Usage
 ```javascript
 
-const file_watcherd_dog = require('@paweldubiel/file-watcher-dog');
+const file_watcher_dog = require('@paweldubiel/file-watcher-dog');
 
 
-let file_watcherd_dog = ['.htaccess', '*.php'];
-filewatcherdog('/path/', datadog_api_key, monitors_regex);
+let monitors_regex = ['.htaccess', '*.php'];
+file_watcher_dog('/path/', datadog_api_key, monitors_regex);
 ```
