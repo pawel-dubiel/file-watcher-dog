@@ -1,0 +1,21 @@
+{
+  "name": "file-watcher-dog",
+  "version": "0.0.1",
+  "description": "Watch recursively files by regex in directories and post modifications as event to Datadog",
+  "main": "index.js",
+  "dependencies": {
+    "dogapi": "^2.8.3",
+    "node-watch": "^0.5.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pawel-dubiel/file-watcher-dog.git"
+  },
+  "author": "Pawel Dubiel",
+  "license": "MIT"
+}
