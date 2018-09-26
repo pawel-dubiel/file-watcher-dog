@@ -10,13 +10,30 @@ function send_request(title, text) {
                     "title": title,
                     "text": text,
                     "priority": "normal",
-                    "alert_type": "error"
+                    "alert_type": "error",
+                    "status": "error"
                 }
         },
         function (err, results) {
             console.dir(results);
         });
 }
+
+function ping() {
+    dogapi.client.request('POST', '/events',
+    {
+        body:
+            {
+                "title": 'Monitoring files integrity is working',
+                "text": 'Monitoring files int4grity is working',
+                "priority": "low",
+                "alert_type": "info",
+                "status": 'success'
+            }
+    });
+}
+
+let timerId = setInterval(ping, 1000*3600);
 
 module.exports = function (directory, api_key, monitors) {
 
@@ -44,13 +61,12 @@ module.exports = function (directory, api_key, monitors) {
         if (base_name.match(regex)) {
             if (evt === 'update') {
                 console.log('created a file at ' + name);
-                send_request('FILE MODIFICATION. ALERT! created/modified a suspicious file at ' + name, '');
+                send_request('FILE MODIFICATION. ALERT!', 'FILE MODIFICATION. ALERT! created/modified a suspicious file at ' + name);
             }
 
             if (evt === 'remove') {
                 console.log('deleted a file at' + name);
-                send_request('FILE MODIFICATION. ALERT! deleted file at' + name, '')
-
+                send_request('FILE MODIFICATION. ALERT!', 'FILE MODIFICATION. ALERT! created/modified a suspicious file at ' + name);
             }
         }
     });
