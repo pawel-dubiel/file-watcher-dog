@@ -33,8 +33,6 @@ function ping() {
     });
 }
 
-let timerId = setInterval(ping, 1000*3600);
-
 module.exports = function (directory, api_key, monitors) {
 
     const options = {
@@ -42,6 +40,9 @@ module.exports = function (directory, api_key, monitors) {
     };
 
     dogapi.initialize(options);
+
+    let timerId = setInterval(ping, 1000*3600);
+
 
     let monitors_parsed_regex = monitors.map(function (el) {
         let new_el = el.replace('.', '\\.');
