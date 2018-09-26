@@ -1,6 +1,6 @@
 {
   "name": "@paweldubiel/file-watcher-dog",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Watch recursively files by regex in directory and post modifications as event to Datadog",
   "main": "index.js",
   "dependencies": {
